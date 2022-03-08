@@ -14,9 +14,6 @@
 
     <h2>Output:</h2>
 
-    <input id="input1" type="text">
-    <input id="input2" type="text">
-
     <section>
 
     </section>
@@ -28,34 +25,12 @@
         function min(a, b){
             return (a < b) ? a : b;
         };
+        
+        let num1 = prompt("First number:");
+        let num2 = prompt("Second number:");
 
-        let input1 = document.querySelector('#input1');
-        let input2 = document.querySelector('#input2');
-        
-
-        input1.addEventListener('change', () => {
-            let num1 = parseFloat(input1.value);
-            let num2 = parseFloat(input2.value);
-        
-            if (isNaN(num1)) {
-                para1.textContent = 'First value is not a number!';
-            } else {                 
-                para1.textContent = `Your numbers are ${num1} and ${num2}. `;
-                para2.textContent = `The smallest number is ${min(num1, num2)}. `;
-            }
-        } )    
-        
-        input2.addEventListener('change', () => {
-            let num1 = parseFloat(input1.value);
-            let num2 = parseFloat(input2.value);
-        
-            if (isNaN(num2)) {
-                para2.textContent = 'Second value is not a number!';
-            } else {                 
-                para1.textContent = `Your numbers are ${num1} and ${num2}. `;
-                para2.textContent = `The smallest number is ${min(num1, num2)}. `;
-            }
-        } )
+        para1.textContent = `Your numbers are ${num1} and ${num2}.`;
+        para2.textContent = `The smallest number is ${min(+num1,+num2)}.`;    
         
 
         const section = document.querySelector('section');
