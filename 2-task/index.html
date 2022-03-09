@@ -27,7 +27,11 @@
 
         const para = document.createElement('p');
 
-        para.textContent = `${number} in power ${power} is ${pow(number, power)}`;
+        if (power < 1){
+            para.textContent = `Power ${power} is not supported. Use a positive integer.`;
+        }else{
+            para.textContent = `${number} in power ${power} is ${pow(number, power)}`;
+        }
 
         const section = document.querySelector('section');
         section.appendChild(para);
